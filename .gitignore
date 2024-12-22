@@ -1,4 +1,19 @@
-_book/
-.quarto/
-*.html
-*.pdf
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Quarto files
+/.quarto/
+/_site/
+/_book/
+
+# R関連
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# 一時ファイル
+*.log
+*.tmp
