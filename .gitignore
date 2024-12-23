@@ -74,3 +74,9 @@ A-doctoral-thesis-title.pdf
 *.log
 *.bbl
 index-blx.bib
+
+A-doctoral-thesis-title.pdf
+*.aux
+*.log
+*.bbl
+index-blx.bib
