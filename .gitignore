@@ -69,3 +69,8 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 >>>>>>> 0698d0e91901653ad909e88927153792851e0c47
+A-doctoral-thesis-title.pdf
+*.aux
+*.log
+*.bbl
+index-blx.bib
