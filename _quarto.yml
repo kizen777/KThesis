@@ -3,33 +3,31 @@ project:
   output-dir: .
   
 book:
-  title: A doctoral thesis title
-  date: December 15, 2023
+  title: |
+    中高齢者における自転車運動の実施による  
+    心身の健康に及ぼす影響
+  subtitle: Effects of Cycling Exercise on Physical and Mental Health in Middle-aged and Older Adults
   author:
-    name: 佐々木 毅然
-    url: http://www.janedoe.com
+    name: "佐々木\\ 毅然"
   downloads: [pdf]
   abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis accumsan ante. Quisque lorem metus, varius id urna eget, lacinia dapibus sem. Etiam laoreet, quam ac mollis congue, arcu leo dictum neque, nec euismod sem enim luctus odio. Donec condimentum tortor sit amet mollis volutpat. Donec ornare libero vel velit malesuada consectetur. Vestibulum in sem non justo dignissim congue at quis erat. Integer quis erat vitae mi maximus fringilla tristique nec odio. Morbi non ipsum sapien. Vestibulum tortor est, ultricies in eros et, bibendum iaculis justo. Cras pellentesque enim quam, id pretium lacus lacinia non. Integer velit neque, ultrices a malesuada vel, imperdiet quis enim. Quisque eu facilisis urna, ut faucibus lorem. Donec mollis turpis sed arcu venenatis interdum. Nulla facilisis tortor ac scelerisque consequat."
   chapters:
     - index.qmd
-    - Chapters/Chapter2.qmd
+    - Chapters/Chapter1.qmd  # 序章
+    - Chapters/Chapter2.qmd  # 研究の背景と目的
     - references.qmd
   appendices:
     - Appendices/AppendixA.qmd
-
-  site-url: https://nmfs-opensci.github.io/quarto-thesis/
-  repo-url: https://github.com/nmfs-opensci/quarto-thesis
   repo-actions: [edit, source, issue]
   search: true
 
 thesis:
   supervisor: 
-    name: Dr. Ashok Kunil
-    url: https://quarto.org/
-  degree-name: Doctor of Philosophy
-  university: University of Ottawa
-  department: Department of Mathematics
-  group: Informatics Program
+    name: "兵庫\\ 太郎\\ 教授"
+  degree-name: "博士論文"
+  university: 
+  department: 兵庫県立大学大学院環境人間学研究科
+  group: 環境人間学専攻
   faculty: Applied Math Group
   declaration: "Frontmatter/declaration.tex"
   quotation:
@@ -40,7 +38,8 @@ thesis:
   symbols: "Frontmatter/symbols.tex"
   dedication: "Frontmatter/dedication.tex"
   logo: images/kendailogo.png
-  logo-height: "3cm"
+  logo-position: "between-title-and-supervisor"
+  logo-height: "3.5cm"
 
 bibliography: references.bib
 csl: styles/apa.csl
@@ -55,6 +54,9 @@ execute:
 # toclinkcolor changes color of toc, lof and lot links
 format:
   quarto-thesis-pdf: 
+    pdf-engine: xelatex
+    documentclass: MastersDoctoralThesis
+    keep-tex: true
     urlcolor: red
     toclinkcolor: black
     toc-depth: 2

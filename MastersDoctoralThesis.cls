@@ -55,8 +55,7 @@
 
 \LoadClass{\baseclass}
 
-%  Simple interface for the user  to customize the chapter titles 
-\ProvideDocumentCommand{\abovechapterskip}{}{\vspace*{20pt}}
+%  Simple interface for the user to customize the chapter titles 
 \ProvideDocumentCommand{\chapterbelowskip}{}{\vspace*{40pt}}
 \ProvideDocumentCommand{\chapterinbetweenskip}{}{\vspace*{20pt}}
 \ProvideDocumentCommand{\autodot}{}{}
@@ -64,37 +63,6 @@
 \ProvideDocumentCommand{\chapteralign}{}{\raggedright}
 \ProvideDocumentCommand{\chapterfont}{}{\Huge\bfseries}
 \ProvideDocumentCommand{\chapterprefixfont}{}{\LARGE\bfseries}
-\DeclareDocumentCommand{\@makechapterhead}{ m }{%
-	\abovechapterskip
-	{\parindent \z@ \chapteralign \normalfont
-		\ifnum \c@secnumdepth >\m@ne
-		\if@mainmatter
-		\ifbool{chapteroneline}{%
-			\chapterfont \mdtChapapp\thechapter\autodot\enspace
-		}{%
-			\chapterprefixfont \@chapapp\space \thechapter
-			\par\nobreak
-			\chapterinbetweenskip
-		}%
-		\fi
-		\fi
-		\interlinepenalty\@M%
-		\chapterfont #1\par\nobreak
-		\chapterbelowskip
-	}
-	\thispagestyle{\chapter@p@gestyle}
-}
-\def\@makeschapterhead#1{%
-	\abovechapterskip
-	{\parindent \z@ \chapteralign
-		\normalfont
-		\interlinepenalty\@M
-		\chapterfont  #1\par\nobreak
-		\chapterbelowskip
-	}
-	\thispagestyle{\chapter@p@gestyle}
-}
-
 
 % Addchap provides unnumbered chapters with an entry in the table of contents as well as an updated header
 \ProvideDocumentCommand{\addchap}{ s o m }{%
@@ -500,6 +468,22 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\end{longtable}
 	\addtocounter{table}{-1}% Don't count this table as one of the document tables
 	\ifbool{nolistspace}{\endgroup}{}
+}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER TITLE PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\NewDocumentEnvironment{chaptertitle}{ m m }{%
+  \ifbool{nolistspace}{\begingroup\singlespacing}{}
+  \thispagestyle{plain}
+  \null\vfil
+  \begin{center}
+    \huge\bfseries 第#1章　#2
+  \end{center}
+  \vfil\null
+}{% 
+  \ifbool{nolistspace}{\endgroup}{}
 }
 
 %----------------------------------------------------------------------------------------

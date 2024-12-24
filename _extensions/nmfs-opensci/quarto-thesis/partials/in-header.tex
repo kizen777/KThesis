@@ -8,7 +8,6 @@
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 
-
 %----------------------------------------------------------------------------------------
 %	MARGINS
 %----------------------------------------------------------------------------------------
@@ -26,3 +25,21 @@
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
+
+\usepackage[utf8]{inputenc}
+
+%----------------------------------------------------------------------------------------
+%	SETTING JAPANESE FONTS
+%----------------------------------------------------------------------------------------
+
+% 日本語フォントの設定
+\usepackage{xeCJK}
+\setCJKmainfont{Hiragino Mincho ProN}
+\setCJKsansfont{Hiragino Sans}
+\setCJKmonofont{Hiragino Sans}
+
+% 日本語用の行送りの設定
+\XeTeXlinebreaklocale "ja"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}

@@ -5,6 +5,7 @@ format:
     classoption: ["11pt", "english", "singlespacing", "headsepline"]
 ---
 
+
 # Chapter 1 Title {#sec-Chapter1}
 
 ## Welcome and Thank You
@@ -180,4 +181,3 @@ Sunil Patel: http://www.sunilpatel.co.uk}{www.sunilpatel.co.uk
 and Vel: http://www.LaTeXTemplates.com
 
 and heavily shortened and adapted for [Quarto](https://quarto.org/) by [Eli Holmes](https://eeholmes.github.io).
-

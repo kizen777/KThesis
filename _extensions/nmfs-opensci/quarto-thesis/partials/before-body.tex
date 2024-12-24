@@ -11,42 +11,13 @@
 
 \vspace*{.06\textheight}
 {\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+\textsc{\LARGE 博士論文}\\[0.5cm] % Thesis type
 
-\HRule \\[0.4cm] % Horizontal line
+\HRule \\[0.3cm] % Horizontal line
 {\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
 \HRule \\[1.5cm] % Horizontal line
- 
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-$if(author.url)$
-\href{$author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
-$else$
-\authorname
-$endif$
-\end{flushleft}
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisor:} \\
-$if(thesis.supervisor.url)$%
-\href{$thesis.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link  
-$else$%
-\supname
-$endif$
-\end{flushright}
-\end{minipage}\\[3cm]
- 
-\vfill
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
-\groupname\\
-\deptname\\[2cm] % Research group name and department name
- 
-\vfill
-
+\vspace{0.1cm}  % 0.1cmの垂直空白
 $if(thesis.logo)$
 $if(thesis.logo-height)$
 \includegraphics[height=$thesis.logo-height$]{$thesis.logo$} % University/department logo
@@ -54,6 +25,43 @@ $else$
 \includegraphics{$thesis.logo$}
 $endif$
 $endif$
+
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushleft} \large
+%\emph{Author:}\\
+%$if(author.url)$
+%\href{$author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
+%$else$
+%\authorname
+%$endif$
+%\end{flushleft}
+%\end{minipage}
+
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Supervisor:} \\
+%$if(thesis.supervisor.url)$%
+%\href{$thesis.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+%$else$%
+%\supname
+%$endif$
+%\end{flushright}
+%\end{minipage}\\[3cm]
+
+\textit{}\\[2.0cm]
+\LARGE 指導教員　\supname\\[0.5cm] % Supervisor name
+ 
+\vfill
+
+%\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+\textit{}\\[0.5cm]
+\LARGE\deptname\\
+\LARGE\groupname\\[0.3cm] % Research group name and department name
+\LARGE\authorname\\[0cm]  % 著者名を追加し、0.5cmの空白を設定
+
+\vfill
+
+
 
 $if(book.date)$
 {\large $book.date$}\\[4cm] % Date
