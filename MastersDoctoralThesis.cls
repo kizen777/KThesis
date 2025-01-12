@@ -95,6 +95,7 @@
 	}%
 }%
 
+
 %----------------------------------------------------------------------------------------
 %	CLASS OPTIONS
 %----------------------------------------------------------------------------------------
@@ -168,8 +169,25 @@
 
 \RequirePackage{booktabs} % Required for better table rules
 
+\RequirePackage{tocloft} % Required for customizing table of contents
+
 \RequirePackage{caption} % Required for customising the captions
 \captionsetup{justification=centerlast,font=small,labelfont=sc,margin=50pt}
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\DeclareDocumentEnvironment{tableofcontents}{}{%
+    \checktoopen
+    \thispagestyle{plain}
+    \begin{center}
+        {\normalsize\bfseries 目次\par}
+    \end{center}
+    \@starttoc{toc}
+}
+
 
 %----------------------------------------------------------------------------------------
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
@@ -227,6 +245,17 @@
 \clubpenalty=9999 % Almost no orphans at top of page
 \interfootnotelinepenalty=9999 % Almost never break footnotes
 
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS FORMAT
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\cftchappresnum}{第}
+\renewcommand{\cftchapaftersnum}{章}
+\renewcommand{\cftchapnumwidth}{4em}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+
+
 %----------------------------------------------------------------------------------------
 %	HEADERS AND FOOTERS
 %----------------------------------------------------------------------------------------
@@ -236,7 +265,7 @@
 	\clearpairofpagestyles%
 	\automark[chapter]{chapter}
 	\ihead{\headmark}% Inner header
-	\ohead[\pagemark]{\pagemark}% Outer header
+  \cfoot[\pagemark]{\pagemark}% ページ番号をセンターフッターに配置
 }
 \ifoot{}% Inner footer
 \ofoot{}% Outer footer
@@ -271,6 +300,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\newpage
 	\if@twocolumn\hbox{}\newpage\fi\fi\fi%
 }
+
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS PAGE DESIGN
@@ -470,21 +500,43 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\ifbool{nolistspace}{\endgroup}{}
 }
 
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+    \chapter*{\contentsname}%
+    \@starttoc{toc}%
+}
+\makeatother
+
+\renewcommand{\cftchapfont}{\normalsize}      % 章のフォント
+\renewcommand{\cftsecfont}{\normalsize}       % セクションのフォント
+\renewcommand{\cftsubsecfont}{\normalsize}    % サブセクションのフォント
+\renewcommand{\cftchappagefont}{\normalsize}  % ページ番号のフォント
+
+
 %----------------------------------------------------------------------------------------
 %	CHAPTER TITLE PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\NewDocumentEnvironment{chaptertitle}{ m m }{%
-  \ifbool{nolistspace}{\begingroup\singlespacing}{}
-  \thispagestyle{plain}
-  \null\vfil
-  \begin{center}
-    \huge\bfseries 第#1章　#2
-  \end{center}
-  \vfil\null
-}{% 
-  \ifbool{nolistspace}{\endgroup}{}
+\renewcommand{\@makechapterhead}[1]{%
+    \vspace*{50\p@}%
+    \begin{center}
+    {\parindent \z@ \normalfont
+        \ifnum \c@secnumdepth >\m@ne
+            \if@mainmatter
+                \huge\bfseries 第\thechapter 章　% 日本語形式
+            \fi
+        \fi
+        \interlinepenalty\@M
+        \Huge \bfseries #1\par\nobreak}
+    \end{center}
+    \vskip 40\p@
 }
+
 
 %----------------------------------------------------------------------------------------
 
