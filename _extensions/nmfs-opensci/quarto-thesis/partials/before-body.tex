@@ -72,6 +72,22 @@ $endif$
 \end{center}
 \end{titlepage}
 
+% $--	LIST OF CONTENTS/FIGURES/TABLES PAGES
+
+\begingroup
+\hypersetup{linkcolor=$if(toclinkcolor)$$toclinkcolor$$else$black$endif$}
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+\endgroup
+
+
+$if(thesis.abbreviations)$
+
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
@@ -134,21 +150,7 @@ $endif$
 
 $endif$
 
-% $--	LIST OF CONTENTS/FIGURES/TABLES PAGES
 
-\begingroup
-\hypersetup{linkcolor=$if(toclinkcolor)$$toclinkcolor$$else$black$endif$}
-
-\tableofcontents % Prints the main table of contents
-
-\listoffigures % Prints the list of figures
-
-\listoftables % Prints the list of tables
-
-\endgroup
-
-
-$if(thesis.abbreviations)$
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
