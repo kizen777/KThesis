@@ -4,7 +4,7 @@ project:
   
 book:
   title: |
-    中高齢者における自転車運動の実施による  
+    中高齢者における自転車運動の実施が  
     心身の健康に及ぼす影響
   subtitle: Effects of Cycling Exercise on Physical and Mental Health in Middle-aged and Older Adults
   author:
@@ -23,7 +23,7 @@ book:
 
 thesis:
   supervisor: 
-    name: "兵庫\\ 太郎\\ 教授"
+    name: "内田\\ 勇人\\ 教授"
   degree-name: "博士論文"
   university: 
   department: 兵庫県立大学大学院環境人間学研究科
@@ -56,8 +56,12 @@ format:
   quarto-thesis-pdf: 
     pdf-engine: xelatex
     documentclass: MastersDoctoralThesis
+    classoption: 
+      - "11pt"
+      - "japanese"
+      - "oneside"
     keep-tex: true
     urlcolor: red
     toclinkcolor: black
-    toc-depth: 2
+    toc-depth: 3
 
