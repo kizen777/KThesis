@@ -102,7 +102,6 @@
 
 \ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package 
 
-
 \ifbool{listtoc}{% If the liststotoc option has been passed to the class, add the lists to the table of contents
 	\patchcmd{\listoftables}{\@starttoc{lot}}{%
 		\addchaptertocentry{\listtablename}\@starttoc{lot}%
@@ -151,6 +150,8 @@
 %----------------------------------------------------------------------------------------
 %	REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
+
+\RequirePackage[a4paper]{geometry}
 
 \RequirePackage{babel} % Required for automatically changing names of document elements to languages besides english
 
@@ -228,12 +229,6 @@
 %----------------------------------------------------------------------------------------
 %	COLOURS
 %----------------------------------------------------------------------------------------
-
-\usepackage{xcolor} % Required for specifying custom colours
-
-\colorlet{mdtRed}{red!50!black}
-
-
 
 %----------------------------------------------------------------------------------------
 %	PENALTIES
@@ -512,16 +507,17 @@ KOMA-script documentation for details.}]{fancyhdr}
 }
 \makeatother
 
-\renewcommand{\cftchapfont}{\normalsize}      % 章のフォント
-\renewcommand{\cftsecfont}{\normalsize}       % セクションのフォント
-\renewcommand{\cftsubsecfont}{\normalsize}    % サブセクションのフォント
-\renewcommand{\cftchappagefont}{\normalsize}  % ページ番号のフォント
+\renewcommand{\cftchapfont}{\normalsize\fontsize{10.5}{12}\selectfont}      % 章のフォント
+\renewcommand{\cftsecfont}{\normalsize\fontsize{10.5}{12}\selectfont}       % セクションのフォント
+\renewcommand{\cftsubsecfont}{\normalsize\fontsize{10.5}{12}\selectfont}    % サブセクションのフォント
+\renewcommand{\cftchappagefont}{\normalsize\fontsize{10.5}{12}\selectfont}  % ページ番号のフォント
 
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER TITLE PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
+\makeatletter
 \renewcommand{\@makechapterhead}[1]{%
     \vspace*{50\p@}%
     \begin{center}
@@ -536,6 +532,7 @@ KOMA-script documentation for details.}]{fancyhdr}
     \end{center}
     \vskip 40\p@
 }
+\makeatother
 
 
 %----------------------------------------------------------------------------------------

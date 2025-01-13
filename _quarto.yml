@@ -53,12 +53,18 @@ execute:
 # linkcolor changes color of internal links (like to figures)
 # toclinkcolor changes color of toc, lof and lot links
 format:
-  quarto-thesis-pdf: 
-    pdf-engine: xelatex
+  quarto-thesis-pdf:
+    pdf-engine: lualatex
     documentclass: MastersDoctoralThesis
+    geometry:
+      - a4paper
+      - total={157truemm,247truemm}
+      - left=25truemm
+      - right=25truemm
+      - top=25truemm
+      - bottom=25truemm
     classoption: 
-      - "11pt"
-      - "japanese"
+      - "fontsize=10.5pt"
       - "oneside"
     keep-tex: true
     urlcolor: red
